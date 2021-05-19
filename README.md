@@ -7,9 +7,15 @@ I've been tasked with creating a basic CRUD app, this app Creates, Reads, Update
 # Created With
 
 Visual Studio Code - IDE
+
 GCP - Database and instance host
+
 MySQL - Database language
+
 Jenkins - CI pipeline
+
 Git - Version control
+
 GitHub - Repository and version control
+
 Trello - Project management
