@@ -1,0 +1,17 @@
+{% extends "body.html" %}
+
+{% block body %}
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.player_name.label }} {{ form.player_name }}
+    <br>
+    {{ form.player_class.label }} {{ form.player_class }}
+    <br>
+    {{ form.level.label }} {{ form.level }}
+    <br>
+    <br>
+    {{ form.submit }}
+</form>
+
+{% endblock body %}

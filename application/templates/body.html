@@ -1,0 +1,20 @@
+<html>
+    <header>
+        <title>Character tracker</title>
+    </header>
+    <body>
+        <H1>Character tracker</H1>
+        <table cellpadding=3 cellspacing=3>
+            <tr  style="text-align:left;background-color:#92a4cc; foreground-color:#ffffff' ">
+                <td width=90px ><a href="/index">Home</a></td>
+                <td width=90px ><a href="/players">Players</a></td>
+                <td width=90px><a href="/items">Items</a></td>
+                <td width=90px ><a href="/editplayers">Edit players</a></td>
+                <td width=90px><a href="/edititems">Edit items</a></td>
+            </tr>
+        </table>
+        <hr>
+        {% block body %}
+        {% endblock body %}
+    </body>
+</html>
