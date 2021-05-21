@@ -1,0 +1,25 @@
+{% extends "body.html" %}
+{% block body %}
+    <div class='showitemsandplayer'>
+        <table>
+            <br>
+            <tr>
+                <th>Item ID&nbsp;&nbsp;</th>
+                <th>Item Name&nbsp;&nbsp;</th>
+                <th>Value (gp)&nbsp;&nbsp;</th>
+                <th>Weight (kg)&nbsp;&nbsp;</th> 
+                <th>Rarity&nbsp;&nbsp;</th>
+                <th>Owner</th>
+            </tr>
+            {% for items in all_items %}
+                <tr>
+                    <th>{{ items.item_id}}</th>
+                    <th>{{ items.item_name }}</th>
+                    <th>{{ items.value }}</th>
+                    <th>{{ items.weight }}</th>
+                    <th>{{ items.rarity }}</th>
+                    <th>{{ items.players.player_name }}</th>
+                {% endfor %}
+            </table>
+        </div>
+    {% endblock body %}

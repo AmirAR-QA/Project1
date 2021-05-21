@@ -19,9 +19,10 @@
                     <th>{{ items.value }}</th>
                     <th>{{ items.weight }}</th>
                     <th>{{ items.rarity }}</th>
-                    <th><form action='{{ url_for('deleteitems', item_id=items.item_id) }}'>
-                        <input type=submit value="Delete"></th>                     
-                        </form></th>
+                    <th><form action='{{ url_for('update_item', item_id=items.item_id) }}'>
+                        <input type=submit value="Update"></form></th>  
+                        <th><form action='{{ url_for('deleteitems', item_id=items.item_id) }}'>
+                        <input type=submit value="Delete"></form></th>    
                     </tr>
                 {% endfor %}
             </table>

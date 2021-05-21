@@ -1,0 +1,22 @@
+{% extends "body.html" %}
+{% block body %}
+<h2>{{ title }}</h2>
+<div class='updatingitems'>
+    <form method="POST" action="">
+        <br>
+        {{ form.hidden_tag() }}
+        {{ form.item_name.label }} {{ form.item_name }}
+        <br>
+        {{ form.value.label }} {{ form.value }}
+        <br>
+        {{ form.weight.label }} {{ form.weight }}
+        <br>
+        {{ form.rarity.label }} {{ form.rarity }}
+        <br>
+        {{ form.owner.label }} {{ form.owner }}
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+
+{% endblock body %}

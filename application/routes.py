@@ -6,12 +6,19 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired, ValidationError
 
+# @app.route('/index', methods=['GET', 'POST'])
+# @app.route('/', methods=['GET', 'POST'])
+# def index():
+#     all_players = Players.query.all()
+#     all_items = Items.query.all()
+#     return render_template('index.html', items=all_items, player_list=all_players)
+
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    all_players = Players.query.all()
-    all_items = Items.query.all()
-    return render_template('body.html', Items=all_items, player_list=all_players)
+    form2 = ItemsForm()
+    items_sorted  = Items.query.order_by(Items.item_id).all() 
+    return render_template("index.html", form=form2, all_items=items_sorted)
 
 @app.route('/addplayers', methods=["GET", "POST"])
 def addplayers():
@@ -80,3 +87,14 @@ def update_player(player_id):
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('updateplayers.html', title="Level up!", form=form)
+
+@app.route("/updateitems/<item_id>", methods=['GET', 'POST'])
+def update_item(item_id):
+    item = db.session.query(Items).get(item_id)
+    form = ItemsForm(obj=item)
+    if form.validate_on_submit():
+        form.populate_obj(item)
+        db.session.add(item)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('updateitems.html', title="Equip fireba- No wait!", form=form)

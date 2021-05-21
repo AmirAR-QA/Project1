@@ -19,6 +19,7 @@ class ItemsForm(FlaskForm):
     value       =   StringField('Value (gp)', validators=[DataRequired()])
     weight      =   StringField('Weight (kg)', validators=[DataRequired()])
     rarity      =   StringField('Rarity', validators=[DataRequired()])
+    owner       =   StringField('Assign to Player')
     submit      =   SubmitField('Submit')
     update      =   SubmitField('Update')
     delete      =   SubmitField('Delete')

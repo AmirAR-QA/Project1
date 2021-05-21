@@ -1,9 +1,6 @@
 {% extends "body.html" %}
-
-<h1>{{ title }}</h1>
-
 {% block body %}
-
+<h2>{{ title }}</h2>
 <div class='updatingplayers'>
     <form method="POST" action="">
         <br>
@@ -20,21 +17,3 @@
 </div>
 
 {% endblock body %}
-
-    <!-- <div class='updatingitems'>
-        <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        {{ form.item_name.label }} {{ form.item_name }}
-    <br>
-        {{ form.value.label }} {{ form.value }}
-    <br>
-        {{ form.weight.label }} {{ form.weight }}
-    <br>
-        {{ form.rarity.label }} {{ form.rarity }}
-    <br>
-    <br>
-        {{ form.submit }}
-    <br>
-    <br>
-        </form>
-</div> -->
