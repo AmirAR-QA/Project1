@@ -1,0 +1,40 @@
+{% extends "body.html" %}
+
+<h1>{{ title }}</h1>
+
+{% block body %}
+
+<div class='updatingplayers'>
+    <form method="POST" action="">
+        <br>
+        {{ form.hidden_tag() }}
+        {{ form.player_name.label }} {{ form.player_name }}
+        <br>
+        {{ form.player_class.label }} {{ form.player_class }}
+        <br>
+        {{ form.level.label }} {{ form.level }}
+        <br>
+        <br>
+        {{ form.submit }}
+    </form>
+</div>
+
+{% endblock body %}
+
+    <!-- <div class='updatingitems'>
+        <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.item_name.label }} {{ form.item_name }}
+    <br>
+        {{ form.value.label }} {{ form.value }}
+    <br>
+        {{ form.weight.label }} {{ form.weight }}
+    <br>
+        {{ form.rarity.label }} {{ form.rarity }}
+    <br>
+    <br>
+        {{ form.submit }}
+    <br>
+    <br>
+        </form>
+</div> -->

@@ -1,0 +1,29 @@
+{% extends "body.html" %}
+{% block body %}
+    <div class='showitems'>
+        <table>
+            <tr>
+                <th>Item ID&nbsp;&nbsp;</th>
+                <th>Item Name&nbsp;&nbsp;</th>
+                <th>Value (gp)&nbsp;&nbsp;</th>
+                <th>Weight (kg)&nbsp;&nbsp;</th> 
+                <th>Rarity&nbsp;&nbsp;</th>
+                <th>Update&nbsp;</th>
+                <th>Delete</th>
+            </tr>
+            {{ form.hidden_tag() }}
+            {% for items in all_items %}
+                <tr>
+                    <th>{{ items.item_id}}</th>
+                    <th>{{ items.item_name }}</th>
+                    <th>{{ items.value }}</th>
+                    <th>{{ items.weight }}</th>
+                    <th>{{ items.rarity }}</th>
+                    <th><form action='{{ url_for('deleteitems', item_id=items.item_id) }}'>
+                        <input type=submit value="Delete"></th>                     
+                        </form></th>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endblock body %}

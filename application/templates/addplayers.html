@@ -1,0 +1,32 @@
+{% extends "body.html" %}
+
+{% block body %}
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.player_name.label }} {{ form.player_name }}
+    {% if form.player_name.errors %}
+    {% for error in form.player_name.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}  
+    <br>
+    {{ form.player_class.label }} {{ form.player_class }}
+    {% if form.player_class.errors %}
+    {% for error in form.player_class.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}  
+    <br>
+    {{ form.level.label }} {{ form.level }}
+    {% if form.level.errors %}
+    {% for error in form.level.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}  
+    <br>
+    <br>
+    {{ form.submit }}
+</form>
+
+{% endblock body %}

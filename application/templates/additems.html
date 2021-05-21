@@ -1,0 +1,19 @@
+{% extends "body.html" %}
+
+{% block body %}
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.item_name.label }} {{ form.item_name }}
+    <br>
+    {{ form.value.label }} {{ form.value }}
+    <br>
+    {{ form.weight.label }} {{ form.weight }}
+    <br>
+    {{ form.rarity.label }} {{ form.rarity }}
+    <br>
+    <br>
+    {{ form.submit }}
+</form>
+
+{% endblock body %}

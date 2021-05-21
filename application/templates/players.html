@@ -1,0 +1,29 @@
+{% extends "body.html" %}
+{% block body %}
+    <div class='showplayers'>
+        <table>
+            <tr>
+                <th>Player ID&nbsp;&nbsp;</th>
+                <th>Player Name&nbsp;&nbsp;</th>
+                <th>Player Class&nbsp;&nbsp;</th>
+                <th>Player Level&nbsp;&nbsp;</th>
+                <th>Update&nbsp;&nbsp;</th>
+                <th>Delete</th>
+
+            </tr>
+            {{ form.hidden_tag() }}
+            {% for players in all_players %}
+                <tr>
+                    <th>{{ players.player_id }}</th>
+                    <th>{{ players.player_name }}</th>
+                    <th>{{ players.player_class }}</th>
+                    <th>{{ players.level }}</th>
+                    <th><form action='{{ url_for('update_player', player_id=players.player_id) }}'>
+                    <input type=submit value="Update"></form></th>  
+                    <th><form action='{{ url_for('deleteplayers', player_id=players.player_id) }}'>
+                    <input type=submit value="Delete"></form></th>                      
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock body %}
