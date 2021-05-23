@@ -7,3 +7,4 @@ pytest
 pytest-cov
 selenium
 flask-testing
+gunicorn
