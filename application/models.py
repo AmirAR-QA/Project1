@@ -5,7 +5,7 @@ class Players(db.Model):
     player_name     =   db.Column(db.String(50), nullable=False)
     player_class    =   db.Column(db.String(50), unique=False, nullable=False)
     level           =   db.Column(db.Integer, nullable=False)
-    items           =   db.relationship('Items', backref='players')
+    items           =   db.relationship('Items', backref='playersref')
 
 class Items(db.Model):
     item_id     =   db.Column(db.Integer, primary_key=True)

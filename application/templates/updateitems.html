@@ -1,9 +1,8 @@
 {% extends "body.html" %}
 {% block body %}
-<h2>{{ title }}</h2>
+<h3>{{ title }}</h3>
 <div class='updatingitems'>
     <form method="POST" action="">
-        <br>
         {{ form.hidden_tag() }}
         {{ form.item_name.label }} {{ form.item_name }}
         <br>

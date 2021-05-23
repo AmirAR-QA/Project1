@@ -1,8 +1,8 @@
 {% extends "body.html" %}
 {% block body %}
+<h3>{{ title }}</h3>
     <div class='showitemsandplayer'>
         <table>
-            <br>
             <tr>
                 <th>Item ID&nbsp;&nbsp;</th>
                 <th>Item Name&nbsp;&nbsp;</th>
@@ -18,7 +18,7 @@
                     <th>{{ items.value }}</th>
                     <th>{{ items.weight }}</th>
                     <th>{{ items.rarity }}</th>
-                    <th>{{ items.players.player_name }}</th>
+                    <th>{{ items.playersref.player_name }}</th>
                 {% endfor %}
             </table>
         </div>

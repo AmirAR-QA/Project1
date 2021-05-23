@@ -6,19 +6,12 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired, ValidationError
 
-# @app.route('/index', methods=['GET', 'POST'])
-# @app.route('/', methods=['GET', 'POST'])
-# def index():
-#     all_players = Players.query.all()
-#     all_items = Items.query.all()
-#     return render_template('index.html', items=all_items, player_list=all_players)
-
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form2 = ItemsForm()
     items_sorted  = Items.query.order_by(Items.item_id).all() 
-    return render_template("index.html", form=form2, all_items=items_sorted)
+    return render_template("index.html", form=form2, all_items=items_sorted, title="What's yours is mine c:")
 
 @app.route('/addplayers', methods=["GET", "POST"])
 def addplayers():
@@ -33,7 +26,7 @@ def addplayers():
         db.session.commit()
         if form.validate_on_submit():
             return redirect('index')
-    return render_template('addplayers.html', form=form)
+    return render_template('addplayers.html', form=form, title="A list of all your potential enemies...")
 
 @app.route('/additems', methods=["GET", "POST"])
 def additems():
@@ -49,13 +42,13 @@ def additems():
         db.session.commit()
         if form.validate_on_submit():
             return redirect('index')
-    return render_template('additems.html', form=form)
+    return render_template('additems.html', form=form, title="Encumbered in 3... 2... 1...")
 
 @app.route("/players", methods=["GET", "POST"])
 def showplayers():
     form = PlayersForm()
     players_sorted  = Players.query.order_by(Players.player_id).all() 
-    return render_template("players.html", form=form, all_players=players_sorted)
+    return render_template("players.html", form=form, all_players=players_sorted, title="The Fellowship")
 
 @app.route('/deleteplayers/<int:player_id>')
 def deleteplayers(player_id):
@@ -68,7 +61,7 @@ def deleteplayers(player_id):
 def showitems():
     form = ItemsForm()
     items_sorted  = Items.query.order_by(Items.item_id).all() 
-    return render_template("items.html", form=form, all_items=items_sorted)
+    return render_template("items.html", form=form, title='So you found a stick', all_items=items_sorted)
 
 @app.route('/deleteitems/<int:item_id>')
 def deleteitems(item_id):

@@ -1,7 +1,6 @@
 {% extends "body.html" %}
-
 {% block body %}
-
+<h3>{{ title }}</h3>
 <form method="POST" action="">
     {{ form.hidden_tag() }}
     {{ form.player_name.label }} {{ form.player_name }}
