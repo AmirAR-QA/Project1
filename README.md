@@ -144,6 +144,9 @@ All of the above have not already been completed because of a severe lack of dev
 
 One point of improvement I'd like to implement would be the creation of an functionality which allows you to log in with a user so that all your players and items are saved for each user rather than on the database at large. This wasn't something required or part of my scope at the start of the project.
 
+A note on versioning - The current app is fully functional and without any major (or percievable minor) bugs. Thus the version number is 0.1.0.
+
+
 ## Contributors
 
 Me!
