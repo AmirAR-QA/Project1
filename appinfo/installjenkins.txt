@@ -1,0 +1,11 @@
+touch install-jenkins.sh
+vim install-jenkins.sh #paste in installjenkinsscript.txt
+chmod +x install-jenkins.sh
+./install-jenkins.sh
+# copy initial admin password into jenkins
+# jenkins is at port 8080
+
+to swap into Venv 
+source venv/bin/activate
+
+
