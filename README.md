@@ -19,7 +19,7 @@
 
 ## Brief 
 
-I've been tasked with creating a basic CRUD app, this app Creates, Reads, Updates, and Deletes data. This will showcase my knowledge and understanding of the programs that we've discussed so far. 
+I have been tasked with creating a basic CRUD app, this app Creates, Reads, Updates, and Deletes data. This will showcase my knowledge and understanding of the programs that we've discussed so far. 
 
 ## Listed Project Requirements
 
@@ -149,7 +149,7 @@ A note on versioning - The current app is fully functional and without any major
 
 ## Contributors
 
-Me!
+Me, Amir. 
 
 ## Acknowledgements
 
